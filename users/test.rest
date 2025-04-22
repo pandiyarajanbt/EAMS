@@ -1,0 +1,27 @@
+POST http://localhost:8000/api/auth/users/login/
+Content-Type: application/json
+
+{
+    "username": "raja",
+    "password": "raja121"
+}
+
+###
+
+POST http://localhost:8000/api/auth/users/signup/
+Content-Type: application/json
+
+{
+    "username": "raja", 
+    "password": "raja121",
+    "email": "raja@gmail.com",
+    "password2": "raja121"
+}
+
+###
+
+GET http://localhost:8000/api/auth/users/test-token/
+Authorization: Token 80c2c4897e65a4863ccc3b17dd60a1b7c17796d2
+
+
+
