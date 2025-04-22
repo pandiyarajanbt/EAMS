@@ -1,5 +1,4 @@
 djangorestframework
 django
 django-environ  
-rest_framework
 django-cors-headers
