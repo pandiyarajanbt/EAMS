@@ -1,2 +1,10 @@
-db.sqlite3
-env/
+**/__pycache__/
+.idea/
+media/
+venv/
+.venv/
+.env
+vvenv/
+
+/.env
+settings.py
