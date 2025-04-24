@@ -4,7 +4,8 @@ media/
 venv/
 .venv/
 .env
-vvenv/
-
-/.env
+venv/
+db.sqlite3
+db.sqlite3-journal
+.env
 settings.py

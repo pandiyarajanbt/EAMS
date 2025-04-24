@@ -1,0 +1,1 @@
+from management.serializers.profile import ProfileSerializer

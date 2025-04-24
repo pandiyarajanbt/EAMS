@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:8000/api/auth/users/test-token/
-Authorization: Token 80c2c4897e65a4863ccc3b17dd60a1b7c17796d2
+Authorization: Token a43eec5432e86afd3909a87a50230cbd3904dc79
 
 
 

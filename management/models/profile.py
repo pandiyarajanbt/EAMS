@@ -1,13 +1,13 @@
-
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-from django.utils import timezone
+from django.contrib.auth.models import User
+
 
 class Profile(models.Model):
-    profile_pic = models.ImageField(upload_to='media/profile_pics/', null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(upload_to='profile_pics/', null=True, blank=True)
     name = models.CharField(max_length=255)
-    join_date = models.DateTimeField(auto_now_add=True, null=False, blank=False)
-    address = models.TextField()
+    address = models.TextField(blank=True)
+    join_date = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

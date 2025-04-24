@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from management.serializer.profile import ProfileSerializer
+from management.serializers.profile import ProfileSerializer
 from management.models import Profile
 
 class ProfileViewSet(viewsets.ModelViewSet):
