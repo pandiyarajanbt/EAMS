@@ -1,20 +1,11 @@
 from django.urls import path
 from management.views.profile import ProfileViewSet
-
-profile_list = ProfileViewSet.as_view({
-    'get': 'list',
-    'post': 'create'
-})
-
-profile_detail = ProfileViewSet.as_view({
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-})
+from management.views.task import CreateTaskView, UpdateTaskView, DeleteTaskView, GetTaskView
 
 urlpatterns = [
-    path('profile/', profile_list, name='profile-list'),
-    path('profile/<int:pk>/', profile_detail, name='profile-detail'),
+    path('task/', CreateTaskView.as_view(), name='create-task'),
+    path('task/<int:pk>/', UpdateTaskView.as_view(), name='update-task'),
+    path('task/<int:pk>/', DeleteTaskView.as_view(), name='delete-task'),
+    path('task/<int:pk>/', GetTaskView.as_view(), name='get-task'),
 ]
 

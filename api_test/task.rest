@@ -1,0 +1,23 @@
+POST http://localhost:8000/api/task/
+Content-Type: application/json
+
+{
+    "title": "Task 1",
+    "description": "Task 1 description",
+    "assigned_to": 1,
+    "project": 1,
+    "due_date": "2021-01-01",
+    "is_completed": false
+}
+
+###
+
+PUT http://localhost:8000/api/task/1/
+Content-Type: application/json
+
+{
+    "title": "Task 1 updated",
+    "description": "Task 1 description updated",
+    "due_date": "2021-01-01",
+    "is_completed": true
+}
