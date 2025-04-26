@@ -1,0 +1,11 @@
+
+
+
+# GET http://localhost:8000/api/project/ 
+# Content-Type: application/json
+
+
+
+
+GET http://localhost:8000/api/profile/
+Content-Type: application/json

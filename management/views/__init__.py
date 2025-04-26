@@ -1,5 +1,5 @@
-from management.views.profile import ProfileViewSet
+from management.views.profile import ProfileView
 from management.views.task import TaskView
-from management.views.project import ProjectView
+from management.views.project import ProjectView, BusinessUnitView
 
 
