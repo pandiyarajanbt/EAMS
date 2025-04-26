@@ -5,7 +5,7 @@ from management.serializers import TaskSerializer
 from management.models import Task
 
 
-class CreateTaskView(APIView):
+class TaskView(APIView):
     def post(self, request):
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
@@ -14,7 +14,6 @@ class CreateTaskView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UpdateTaskView(APIView):
     def put(self, request, pk):
         task = Task.objects.get(pk=pk)
         serializer = TaskSerializer(task, data=request.data)
@@ -24,21 +23,26 @@ class UpdateTaskView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class DeleteTaskView(APIView):
     def delete(self, request, pk):
-        if Task.objects.filter(pk=pk).exists():
-            task = Task.objects.get(pk=pk)
+        task = Task.objects.get(pk=pk)
+        if task:
             task.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-
-class GetTaskView(APIView):
     def get(self, request, pk):
-        if Task.objects.filter(pk=pk).exists():
-            task = Task.objects.get(pk=pk)
+        task = Task.objects.get(pk=pk)
+        if task:
             serializer = TaskSerializer(task)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    
+
+    def search(self, request):
+        tasks = request.data.get('title')
+        if tasks:
+            tasks = Task.objects.filter(title__icontains=tasks)
+            serializer = TaskSerializer(tasks, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else :
+            return Response(status=status.HTTP_404_NOT_FOUND)
