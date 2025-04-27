@@ -49,3 +49,6 @@ class TestTokenView(APIView):
             'token': request.auth.key
         }
         return Response(data)
+
+
+#Face Recognition Login
