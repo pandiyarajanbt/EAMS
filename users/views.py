@@ -51,4 +51,22 @@ class TestTokenView(APIView):
         return Response(data)
 
 
+#TODO:
 #Face Recognition Login
+
+#TODO:
+# Admin Login and HR Login
+
+
+#TODO:
+# Employee Login
+
+#TODO:
+# Employee Signup
+
+
+#TODO:
+# Admin Signup
+
+#TODO:
+# HR Signup
