@@ -4,6 +4,7 @@ from management.views.task import TaskView
 from management.views.project import ProjectView, BusinessUnitView
 from users.views import LoginView, SignUpView, TestTokenView
 from management.views.profile import ProfileView
+from management.views.attendance import AttendanceView
 
 urlpatterns = [
     #Admin
@@ -41,4 +42,9 @@ urlpatterns = [
     re_path('api/business-unit/delete/<int:pk>/', BusinessUnitView.as_view(), name='delete-business-unit'),
     re_path('api/business-unit/get/<int:pk>/', BusinessUnitView.as_view(), name='get-business-unit'),
     re_path('api/business-unit/search/', BusinessUnitView.as_view(), name='search-business-unit'),
+
+    #Attendance
+    re_path('api/attendance/', AttendanceView.as_view(), name='create-attendance'),
+    re_path('api/attendance/update/<int:pk>/', AttendanceView.as_view(), name='update-attendance'),
+    re_path('api/attendance/get/<int:pk>/', AttendanceView.as_view(), name='get-attendance'),
 ]
