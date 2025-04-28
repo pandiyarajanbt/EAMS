@@ -5,7 +5,7 @@ from management.views.project import ProjectView, BusinessUnitView
 from users.views import LoginView, SignUpView, TestTokenView
 from management.views.profile import ProfileView
 from management.views.attendance import AttendanceView
-
+from management.views.documents_uploads import DocumentsUploadView
 urlpatterns = [
     #Admin
     re_path('admin/', admin.site.urls),
@@ -47,4 +47,8 @@ urlpatterns = [
     re_path('api/attendance/', AttendanceView.as_view(), name='create-attendance'),
     re_path('api/attendance/update/<int:pk>/', AttendanceView.as_view(), name='update-attendance'),
     re_path('api/attendance/get/<int:pk>/', AttendanceView.as_view(), name='get-attendance'),
+
+    #Documents Upload
+    re_path('api/documents-upload/', DocumentsUploadView.as_view(), name='create-documents-upload'),
+    re_path('api/documents-upload/get', DocumentsUploadView.as_view(), name='get-documents-upload'),
 ]
