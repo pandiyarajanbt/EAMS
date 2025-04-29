@@ -14,4 +14,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'is_completed',
             'created_at',
             'updated_at',
+            'completed_tasks',
+            'total_tasks',
         ]

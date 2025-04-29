@@ -1,3 +1,5 @@
 from management.serializers.profile import ProfileSerializer
 from management.serializers.task import TaskSerializer
 from management.serializers.project import ProjectSerializer, BusinessUnitSerializer
+from management.serializers.attendance import AttendanceSerializer
+from management.serializers.documents_uploads import DocumentsSerializer
