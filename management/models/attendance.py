@@ -6,9 +6,11 @@ class Attendance(models.Model):
         Profile, on_delete=models.CASCADE,
         related_name='attendances'
     )
+    image_capture = models.FileField(upload_to='media/attendance/', null=False, blank=False)
     date = models.DateField()
     check_in = models.DateTimeField(null=True, blank=True)
     check_out = models.DateTimeField(null=True, blank=True)
+    current_location = models.CharField(max_length=255, null=True, blank=True)
     is_present = models.BooleanField(default=False)
 
     class Meta:

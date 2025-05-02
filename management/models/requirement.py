@@ -1,11 +1,11 @@
 from django.db import models
 from .project import Project
-from django.contrib.auth.models import User
+from .profile import Profile
 
 
 class Requirement(models.Model):
     requester = models.ForeignKey(
-        User, on_delete=models.PROTECT,
+        Profile, on_delete=models.PROTECT,
         related_name='requirements'
     )
     project = models.ForeignKey(
