@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, re_path
 from management.views.task import TaskView
 from management.views.project import ProjectView, BusinessUnitView
-from users.views import LoginView, SignUpView, TestTokenView
+from users.views import LoginView, SignUpView, TestTokenView, StaffLogin, AdminLogin
 from management.views.profile import ProfileView
 from management.views.attendance import AttendanceView
 from management.views.documents_uploads import DocumentsUploadView
@@ -14,6 +14,8 @@ urlpatterns = [
     re_path('api/auth/login/', LoginView.as_view(), name='login'),
     re_path('api/auth/signup/', SignUpView.as_view(), name='signup'),
     re_path('api/auth/test-token/', TestTokenView.as_view(), name='test-token'),
+    re_path('api/auth/admin/login/', AdminLogin.as_view(), name='admin-login'),
+    re_path('api/auth/staff/login/', StaffLogin.as_view(), name='staff-login'),
 
     #Task
     re_path('api/task/', TaskView.as_view(), name='create-task'),
