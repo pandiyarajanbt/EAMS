@@ -1,4 +1,4 @@
-POST http://localhost:8000/api/auth/users/login/
+POST http://localhost:8000/api/auth/login/
 Content-Type: application/json
 
 {
@@ -6,6 +6,24 @@ Content-Type: application/json
     "password": "raja121"
 }
 
+###
+POST http://localhost:8000/api/auth/admin/login/
+Content-Type: application/json
+
+{
+    "username": "raja",
+    "password": "raja121"
+}
+###
+
+
+POST http://localhost:8000/api/auth/staff/login/
+Content-Type: application/json
+
+{
+    "username": "raja",
+    "password": "raja121"
+}
 ###
 
 POST http://localhost:8000/api/auth/login/
