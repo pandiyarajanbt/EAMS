@@ -6,6 +6,9 @@ from users.views import LoginView, SignUpView, TestTokenView, StaffLogin, AdminL
 from management.views.profile import ProfileView
 from management.views.attendance import AttendanceView
 from management.views.documents_uploads import DocumentsUploadView
+from management.views.expense_report import ExpenseReportApiView
+
+
 urlpatterns = [
     #Admin
     re_path('admin/', admin.site.urls),
@@ -53,4 +56,8 @@ urlpatterns = [
     #Documents Upload
     re_path('api/documents-upload/', DocumentsUploadView.as_view(), name='create-documents-upload'),
     re_path('api/documents-upload/get', DocumentsUploadView.as_view(), name='get-documents-upload'),
+
+    #ExpenseReport
+    re_path('api/expense/', ExpenseReportApiView.as_view(), name='create-expense'),
+    re_path('api/expense/get', ExpenseReportApiView.as_view(), name='get-expense-upload'),
 ]

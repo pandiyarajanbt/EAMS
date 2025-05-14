@@ -3,3 +3,4 @@ from management.serializers.task import TaskSerializer
 from management.serializers.project import ProjectSerializer, BusinessUnitSerializer
 from management.serializers.attendance import AttendanceSerializer
 from management.serializers.documents_uploads import DocumentsSerializer
+from management.serializers.expense_report import ExpenseReportSerializers, ExpenseReportProcessSerializers, ExpenseReportApprovalSerializers
